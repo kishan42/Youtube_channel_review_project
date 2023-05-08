@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en" >
+
+<head>
+  <meta charset="UTF-8">
+  <title>Review Page</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+
+
+      <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+
+
+</head>
+
+<body>
+
+  <div class="table-users">
+   <div class="header"><h1>{{ channelName }}</h1></div>
+
+   <table cellspacing="0">
+      <thead>
+        <thead>
+          <tr>
+            {% for col in df.columns %}
+            <th>{{ col }}</th>
+            {% endfor %}
+          </tr>
+        </thead>
+      </thead>
+      {% for index, row in df.iterrows() %}
+      <tr>
+        {% for col, value in row.items() %}
+        {% if loop.index > 3 %}
+        <td><a href="{{ value }}">{{ value }}</a></td>
+        {% else %}
+        <td>{{ value }}</td>
+        {% endif %}
+        {% endfor %}
+      </tr>
+      {% endfor %}
+    </tbody>
+   </table>
+</div>
+
+
+
+</body>
+
+</html>

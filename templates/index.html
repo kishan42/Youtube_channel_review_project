@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+
+{% block head %}
+
+<title>Search Page</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+
+{% endblock %}
+
+{% block body %}
+<div class="content">
+    <h1 style="text-align: center; font-style: oblique; color: tomato;">Search Youtube Channel Name And Find Recent Uploaded Video Reviews</h1>
+
+    <div class="form">
+        <form action="/review" method="POST">
+            <input type="text" style="vertical-align: middle;
+            margin: 5px 10px 5px 0;
+            padding: 10px;
+            background-color: #fff;
+            border: 1px solid #ddd;
+            border-radius: 8px;" name="content" id="content">
+            <input type="submit" style="background-color: #4CAF50; /* Green */
+            border: none;
+            color: white;
+            padding: 12px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            cursor: pointer;
+            border-radius: 8px;" value="Search">
+        </form>
+    </div>
+</div>
+{% endblock %}
