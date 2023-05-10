@@ -12,7 +12,7 @@ from selenium.webdriver.chrome.service import Service
 import time
 
 application = Flask(__name__)
-application = app
+app = application
 
 @app.route("/",methods = ['GET'])
 @cross_origin()
