@@ -11,8 +11,8 @@ from dateutil.relativedelta import relativedelta
 from selenium.webdriver.chrome.service import Service
 import time
 
-app = Flask(__name__)
-
+application = Flask(__name__)
+application = app
 
 @app.route("/",methods = ['GET'])
 @cross_origin()
